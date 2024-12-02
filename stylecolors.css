@@ -1,0 +1,48 @@
+:root {
+    --dark-blue: #00274D;
+    --light-blue: #87CEEB;
+    --orange: #FFA500;
+    --dark-orange: #E65C00;
+    --yellow: #FFD700;
+    --dark-gray: #333333;
+    --light-gray: #F5F5F5;
+}
+
+body {
+    color: var(--dark-gray)!important;
+    background-color: var(--light-gray)!important;
+}
+
+header {
+    background-color: var(--dark-blue)!important;
+    color: #FFFFFF;
+}
+
+.nav-links a {
+    color: var(--light-blue)!important;
+}
+
+.nav-links a:hover {
+    color: var(--orange)!important;
+}
+
+.hero-text {
+    background-color: var(--light-blue)!important;
+    color: #FFFFFF;
+}
+
+.hero-text .cta {
+    background-color: var(--orange)!important;
+    color: #FFFFFF;
+}
+
+.hero-text .cta:hover {
+    background-color: var(--dark-orange)!important;
+}
+
+footer {
+    background-color: var(--dark-blue)!important;
+    color: #FFFFFF;
+}
+
+/* Other sections follow the same pattern... */

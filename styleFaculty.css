@@ -1,0 +1,410 @@
+@import url('/stylecolors.css');
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between picture and text */
+}
+
+/* Picture Container */
+.picture-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFA500;
+}
+
+/* Dropdown Menu */
+.dropdown > a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content li a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    color: #FFA500;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Header Section */
+.hero {
+    text-align: center;
+    background-color: #FFD700;
+    padding: 100px 20px;
+    margin-top: 70px;
+    color: #333;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Section Styling */
+section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Chairperson Section Styling */
+.chairperson-section {
+    background-color: #FFD700;
+    padding: 40px 20px;
+}
+
+.chairperson-section h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Faculty Members Section Styling */
+.faculty-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.faculty-section h2 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+
+/* Grid Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 300px; /* Fixed height for consistency */
+    width: 250px; /* Fixed width for consistent box size */
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Chairperson Images */
+.grid-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #FFD700;
+}
+
+/* Chairperson Titles */
+.grid-item h4 {
+    font-size: 18px;
+    color: #E94E77;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.grid-item h5 {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px 15px; /* Less padding for smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav items initially for mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333; /* Match background */
+        position: absolute;
+        top: 60px; /* Adjust as per the height of your header */
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav items when active */
+    }
+
+    .nav-links li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hamburger menu button (three lines) */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .hamburger.active .line {
+        background-color: white; /* Change color for active state */
+    }
+
+    /* Dropdown menus in mobile view */
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+    nav {
+        max-width: 100%; /* Ensure full width on smaller devices */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Keep hidden unless active */
+    }
+
+    .hamburger {
+        display: block; /* Hamburger menu visible on tablets */
+    }
+}
+
+/* For larger screens (desktop) */
+@media screen and (min-width: 1200px) {
+    .nav-links {
+        justify-content: space-evenly;
+        display: flex; /* Show links by default on large screens */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on large screens */
+    }
+}
+
+
+.chairperson-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.chairperson {
+    display: flex;
+    align-items: flex-start;  /* Aligning items at the start */
+    gap: 20px;
+    text-align: left;
+    border: 2px solid #ccc;  /* Light gray border */
+    padding: 20px;
+    border-radius: 8px;  /* Optional: rounded corners */
+    background-color: #f9f9f9; /* Optional: light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.chairperson img {
+    width: 150px;
+    height: 150px;  /* Ensuring a square image */
+    object-fit: cover;  /* Ensuring the image fills the area without stretching */
+    border-radius: 50%;  /* Optional: round image */
+}
+
+.chairperson-info {
+    max-width: 600px;
+}
+
+.chairperson h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;  /* Darker text color */
+}
+
+.chairperson h5 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #555;  /* Slightly lighter text color */
+}
+
+.chairperson p {
+    font-size: 14px;
+    line-height: 1.6;  /* Improved line height for readability */
+    color: #555;
+}
+
+.chairperson h4, .chairperson h5 {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.chairperson p {
+    font-family: 'Verdana', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+/* Optional: Styling for borders between chairpersons */
+.chairperson-container .chairperson:not(:last-child) {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 30px;
+}
+
+.chairperson-info {
+    flex-grow: 1;  /* Makes the text container grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;  /* Space between image and text */
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+

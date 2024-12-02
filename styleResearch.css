@@ -1,0 +1,319 @@
+@import url('/stylecolors.css');
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between picture and text */
+}
+
+/* Picture Container */
+.picture-container {
+    width: 30px; /* Match size of previous icon */
+    height: 30px;
+    border-radius: 50%; /* Circular container */
+    overflow: hidden; /* Crop the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container */
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 24px; /* Keep text size consistent */
+    font-weight: bold;
+    color: #FFD700; /* Yellow for consistency */
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #FFD700; /* Yellow */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFA500; /* Orange */
+}
+
+/* Dropdown Menu */
+.dropdown > a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow when hovered */
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content li a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    color: #FFA500; /* Orange */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Background Section */
+.background-section {
+    text-align: center;
+    margin: 20px 0;
+    background-color: #fe8d01;
+}
+
+.background-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Research Output Section */
+.research-output {
+    text-align: center;
+    padding: 20px;
+}
+
+.research-output h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Grid Layout for Images */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-items: center;
+    padding: 10px;
+}
+
+.grid-layout img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ensures images are cropped properly */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.grid-layout img:hover {
+    transform: scale(1.05); /* Adds a hover zoom effect */
+}
+
+/* Publications and Documents Section */
+.publications-documents {
+    padding: 20px;
+    text-align: left;
+}
+
+.publications-documents h2{
+    background-color: #FFD700;
+}
+
+.publications-documents h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.publications-documents ul {
+    list-style: disc inside;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* Technology Innovation Section */
+.tech-innovation {
+    text-align: center;
+    padding: 20px;
+}
+
+.tech-innovation h2{
+    background-color: #FFD700;
+}
+
+.grid-layout-lengthwise {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-layout-lengthwise img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px 15px; /* Less padding for smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav items initially for mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333; /* Match background */
+        position: absolute;
+        top: 60px; /* Adjust as per the height of your header */
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav items when active */
+    }
+
+    .nav-links li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hamburger menu button (three lines) */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .hamburger.active .line {
+        background-color: white; /* Change color for active state */
+    }
+
+    /* Dropdown menus in mobile view */
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+    nav {
+        max-width: 100%; /* Ensure full width on smaller devices */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Keep hidden unless active */
+    }
+
+    .hamburger {
+        display: block; /* Hamburger menu visible on tablets */
+    }
+}
+
+/* For larger screens (desktop) */
+@media screen and (min-width: 1200px) {
+    .nav-links {
+        justify-content: space-evenly;
+        display: flex; /* Show links by default on large screens */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on large screens */
+    }
+}

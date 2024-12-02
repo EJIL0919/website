@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRMSU College of Engineering</title>
+    <link rel="stylesheet" href="styleResearch.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+ 
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="picture-container">
+                    <img src="Image/logocoebg.png" alt="University Logo" />
+                </div>
+                <h1 class="logo-text">PRMSU College of Engineering</h1>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Instruction <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="Curriculum.html">Curricular Offerings</a></li>
+                        <li><a href="Faculty.html">Faculty</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="Research.html">Research <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="BSCE.html">BSCE Researches</a></li>
+                        <li><a href="BSCPE.html">BSCpE Researches</a></li>
+                        <li><a href="BSCEE.html">BSEE Researches</a></li>
+                        <li><a href="BSME.html">BSME Researches</a></li>
+                    </ul>
+                </li>
+                <li><a href="Extension.html">Extension</a></li>
+                <li><a href="History.html">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Background Picture Section -->
+    <section class="background-section">
+        <img src="Image/Research/research-removebg-preview.png" class="background-image">
+    </section>
+
+    <!-- Program Research Output Section -->
+    <section class="research-output">
+        <h2>Program Research Output</h2>
+        <div class="grid-layout">
+            <div class="program" onclick="window.location.href='BSCE.html';">
+                <img src="Image/Logo/civil.jpg" alt="Civil Engineering">
+                <p>Civil Engineering</p>
+            </div>
+            <div class="program" onclick="window.location.href='BSCPE.html';">
+                <img src="Image/Logo/comp.jpg" alt="Computer Engineering">
+                <p>Computer Engineering</p>
+            </div>
+            <div class="program" onclick="window.location.href='BSCEE.html';">
+                <img src="Image/Logo/elec.jpg" alt="Electrical Engineering">
+                <p>Electrical Engineering</p>
+            </div>
+            <div class="program" onclick="window.location.href='BSME.html';">
+                <img src="Image/Logo/mech.jpg" alt="Mechanical Engineering">
+                <p>Mechanical Engineering</p>
+            </div>
+            <div class="program" onclick="window.location.href='Mining.html';">
+                <img src="Image/Logo/mining.jpg" alt="Mining Engineering">
+                <p>Mining Engineering</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Publication and Documents Section -->
+    <section class="publications-documents">
+        <h2>Publication and Documents</h2>
+
+        <div class="publications">
+            <h3>Publications</h3>
+            <ul>
+                <li>Research Journal 2020</li>
+                <li>Research Journal 2019</li>
+            </ul>
+        </div>
+
+        <div class="documents">
+            <h3>Documents</h3>
+            <ul>
+                <li>PRMSU Intellectual Property Rights Manual</li>
+                <li>Research Manual of Operations 2022</li>
+                <li>RMTU Research Manual 2017</li>
+                <li>2017-2022 Harmonized R and D Agenda</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technology Innovation Section -->
+    <section class="tech-innovation">
+        <h2>Technology Innovation</h2>
+        <div class="grid-layout-lengthwise">
+            <img src="Image/Research/Screenshot 2024-11-25 190139.png" alt="Technology Innovation 1">
+            <img src="Image/Research/Screenshot 2024-11-25 190151.png" alt="Technology Innovation 2">
+            <img src="Image/Research/Screenshot 2024-11-25 190214.png" alt="Technology Innovation 3">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PRMSU College of Engineering. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

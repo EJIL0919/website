@@ -1,0 +1,289 @@
+@import url('/stylecolors.css');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    line-height: 1.6;
+    color: #FFFFFF; /* White text */
+    background-color: #00274D; /* Dark Blue */
+}
+
+/* Header */
+header {
+    background: #00274D; /* Dark Blue */
+    color: #FFA500; /* Orange */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between picture and text */
+}
+
+/* Picture Container */
+.picture-container {
+    width: 30px; /* Match size of previous icon */
+    height: 30px;
+    border-radius: 50%; /* Circular container */
+    overflow: hidden; /* Crop the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container */
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 24px; /* Keep text size consistent */
+    font-weight: bold;
+    color: #FFA500; /* Orange for highlights */
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #FFA500; /* Orange for text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #87CEEB; /* Light Blue */
+}
+
+/* Dropdown Menu */
+.dropdown > a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow when hovered */
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00274D; /* Dark Blue */
+    color: #FFFFFF; /* White text */
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content li a {
+    color: #FFA500; /* Orange */
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    color: #87CEEB; /* Light Blue */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Hero Section */
+.hero {
+    background-color: #FFA500; /* Orange */
+    color: #FFFFFF; /* White */
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 70px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Program List */
+.program-list {
+    padding: 20px;
+}
+
+.program {
+    margin-bottom: 20px;
+}
+
+.program h4 {
+    background-color: #87CEEB; /* Light Blue */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.program ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #87CEEB; /* Light Blue */
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.program ul.show {
+    display: block;
+}
+
+.program ul li {
+    padding: 10px;
+    border-bottom: 1px solid #00274D; /* Dark Blue */
+    text-decoration: none;
+}
+
+.program ul li:last-child {
+    border-bottom: none; /* Remove the line for the last item */
+}
+
+/* Footer */
+footer {
+    background-color: #00274D; /* Dark Blue */
+    color: #FFA500; /* Orange */
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: -90px;
+    width: 100%;
+}
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px 15px; /* Less padding for smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav items initially for mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333; /* Match background */
+        position: absolute;
+        top: 60px; /* Adjust as per the height of your header */
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav items when active */
+    }
+
+    .nav-links li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hamburger menu button (three lines) */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .hamburger.active .line {
+        background-color: white; /* Change color for active state */
+    }
+
+    /* Dropdown menus in mobile view */
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+    nav {
+        max-width: 100%; /* Ensure full width on smaller devices */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Keep hidden unless active */
+    }
+
+    .hamburger {
+        display: block; /* Hamburger menu visible on tablets */
+    }
+}
+
+/* For larger screens (desktop) */
+@media screen and (min-width: 1200px) {
+    .nav-links {
+        justify-content: space-evenly;
+        display: flex; /* Show links by default on large screens */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on large screens */
+    }
+}

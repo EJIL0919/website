@@ -1,0 +1,338 @@
+@import url('/stylecolors.css');
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    color: #333333;
+    background-color: #F5F5F5;
+}
+
+/* Header */
+header {
+    background-color: #00274D; /* Dark Blue */
+    color: #FFFFFF; /* White for text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between picture and text */
+}
+
+/* Picture Container */
+.picture-container {
+    width: 30px; /* Match size of previous icon */
+    height: 30px;
+    border-radius: 50%; /* Circular container */
+    overflow: hidden; /* Crop the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the container */
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 24px; /* Keep text size consistent */
+    font-weight: bold;
+    color: #FFA500; /* orange */
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #87CEEB; /* Light Blue */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFA500; /* Orange */
+}
+
+/* Dropdown Menu */
+.dropdown > a {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow when hovered */
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content li a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    color: #FFA500; /* Orange */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-color: #FFD700;
+    padding: 40px 20px;  /* Reduced padding */
+    margin-top: 70px;
+    color: #333;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Section Styling */
+section {
+    padding: 20px 20px;  /* Reduced padding */
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;  /* Reduced margin */
+}
+
+/* Extension Overview Section */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;  /* Reduced margin */
+}
+
+.image-container {
+    margin: 10px auto;  /* Reduced margin */
+    text-align: center;
+}
+
+.big-image {
+    width: 50%;
+    height: auto;
+    border-radius: 8px; /* Slightly reduced border-radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Slightly smaller shadow */
+}
+
+.section-container p {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* Accomplishment Section */
+.accomplishment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;  /* Reduced margin */
+}
+
+.accomplishment-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.accomplishment-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Report Section */
+.report-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.report-button {
+    background-color: #FFA500;
+    color: #fff;
+    padding: 8px 18px;  /* Reduced padding */
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.report-button:hover {
+    background-color: #E65C00;
+}
+
+.report-list {
+    display: none;
+    margin-top: 20px;
+}
+
+.report-list ul {
+    list-style-type: none;
+}
+
+.report-list ul li {
+    margin: 10px 0;
+}
+
+.report-list ul li a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.report-list ul li a:hover {
+    color: #FFA500;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Mobile view */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px 15px; /* Less padding for smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav items initially for mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333; /* Match background */
+        position: absolute;
+        top: 60px; /* Adjust as per the height of your header */
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav items when active */
+    }
+
+    .nav-links li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hamburger menu button (three lines) */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .hamburger.active .line {
+        background-color: white; /* Change color for active state */
+    }
+
+    /* Dropdown menus in mobile view */
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Tablet view */
+@media screen and (max-width: 992px) {
+    nav {
+        max-width: 100%; /* Ensure full width on smaller devices */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Keep hidden unless active */
+    }
+
+    .hamburger {
+        display: block; /* Hamburger menu visible on tablets */
+    }
+}
+
+/* For larger screens (desktop) */
+@media screen and (min-width: 1200px) {
+    .nav-links {
+        justify-content: space-evenly;
+        display: flex; /* Show links by default on large screens */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on large screens */
+    }
+}
